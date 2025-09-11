@@ -2,19 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Belajar Objek Javascript</title>
+    <title>Objek Javascript</title>
 
     <script>
-        var person = {
-            firstName: "Frenky",
-            lastName: "Jullyan",
-            jurusan: "RPL",
-            showName: function(){
-                alert(`Nama: ${this.firstName} ${this.lastName}`);
-            }
-        };
+        function Person(firstName, lastName){
+            // properti
+            this.firstName = firstName;
+            this.lastName = lastName;
 
-        person.showName();
+            // method
+            this.fullName = function(){
+                return `${this.firstName} ${this.lastName}`
+            }
+            this.showName = function(){
+                document.write(this.fullName());
+            }
+        }
+
+        var person1 = new Person("Frenky", "Jullyan");
+        var person2 = new Person("XI-", "RPL");
+
+        person1.showName();
+        document.write("<br>");
+        person2.showName();
+
+        console.log(person1);
+        console.log(person2);
+
     </script>
 </head>
 <body>
+    <p>
+       Sumber:
+        <a href="https://www.petanikode.com/javascript-objek/">https://www.petanikode.com/javascript-objek/</a>
+    </p>
+</body>
+</html>
