@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM API Javascript</title>
+</head>
+
+<body>
+
+    <h1 id="judul">Ubah Warna</h1>
+    <label>Warna latar: </label>
+    <input type="color" id="bg-color" />
+    <br><br>
+    <label>Warna teks: </label>
+    <input type="color" id="text-color" />
+
+    <p id="preview">Contoh teks yang warnanya bisa berubah</p>
+
+    <script>
+        var bgColor = document.getElementById('bg-color');
+        var txtColor = document.getElementById('text-color');
+        var preview = document.getElementById('preview');
+
+        bgColor.addEventListener("input", () => {
+            document.body.style.backgroundColor = bgColor.value;
+        });
+
+        txtColor.addEventListener("input", () => {
+            preview.style.color = txtColor.value;
+        });
+    </script>
+
+</body>
+</html>
